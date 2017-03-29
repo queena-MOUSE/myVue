@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vue demo</title>
+<style>
+    * {
+        text-decoration: none;
+    }
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+    .item,.list {
+        margin: 10px 0;
+    }
+    .title {
+        vertical-align: super;
+    }
+</style>
+<script src="vue.js"></script>
+<script src="vue-resource.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="nav">
+        <my-nav v-for="item in navArr" :data="item">
+        </my-nav>
+    </div>
+    <div class="list" v-if='isListShow'>
+        <my-list v-for="item in listArr" :data="item">
+        </my-list>
+    </div>
+    <my-detail v-if='isDetailShow' :data='detail'>
+    </my-detail>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
